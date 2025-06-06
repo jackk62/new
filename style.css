@@ -25,7 +25,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -34,15 +34,15 @@
 }
 
 .hero-title {
-  font-size: 6rem;  /* Diminuído */
-  font-weight: bold;
+  font-size: 5rem; /* Diminuído para dar mais espaço e grandiosidade */
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: 8px;
   animation: fadeInTitle 3s ease-out;
 }
 
 .hero-subtitle {
-  font-size: 2rem;  /* Diminuído */
+  font-size: 1.8rem; /* Diminuído */
   font-style: italic;
   margin-top: 20px;
   animation: fadeInSubtitle 4s ease-out;
@@ -51,13 +51,13 @@
 .cta-button {
   background-color: #ff416c;
   color: white;
-  padding: 20px 40px;
-  font-size: 1.5rem;  /* Diminuído */
+  padding: 18px 40px;
+  font-size: 1.4rem; /* Diminuído */
   text-decoration: none;
   border-radius: 50px;
   margin-top: 30px;
   text-transform: uppercase;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease;
 }
 
@@ -96,7 +96,7 @@
 
 /* --- Content Sections --- */
 .section {
-  padding: 120px 20px; /* Mais espaçamento */
+  padding: 150px 20px; /* Aumentado o padding para dar mais espaçamento */
   text-align: center;
 }
 
@@ -114,15 +114,15 @@
 }
 
 h2 {
-  font-size: 3rem;  /* Diminuído */
+  font-size: 3.5rem; /* Diminuído, mas mantendo a grandiosidade */
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: #ff416c;
   animation: slideUp 2s ease-out;
 }
 
 p {
-  font-size: 1.25rem; /* Diminuído */
+  font-size: 1.2rem; /* Diminuído */
   margin-bottom: 50px;
   color: #ccc;
 }
@@ -131,59 +131,13 @@ p {
 .content-container {
   display: flex;
   justify-content: center;
-  gap: 60px;  /* Aumentado o espaço */
+  gap: 80px; /* Aumentado o gap para maior espaçamento */
   margin-top: 40px;
 }
 
 .card {
-  width: 300px;
-  height: 300px;  /* Aumentado */
-  background-color: #ff416c;
-  color: white;
-  font-size: 2rem;  /* Diminuído */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.1);
-}
-
-/* --- Mega Gallery --- */
-.mega-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.mega-card {
-  width: 350px;  /* Aumentado */
+  width: 350px; /* Aumentado */
   height: 350px; /* Aumentado */
   background-color: #ff416c;
   color: white;
-  font-size: 2rem;  /* Diminuído */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease;
-}
-
-.mega-card:hover {
-  transform: scale(1.1);
-}
-
-/* --- Footer --- */
-.mega-footer {
-  background: #111;
-  padding: 50px 20px;  /* Aumentado o padding */
-  text-align: center;
-  color: #ccc;
-  font-size: 1.5rem;  /* Diminuído */
-  box-shadow:
+  font-size: 2.2rem;
