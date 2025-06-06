@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const scrollButton = document.querySelector('.cta-button');
-  
-  // Adicionando interatividade no botão de call-to-action
-  scrollButton.addEventListener('click', () => {
-    document.getElementById("section1").scrollIntoView({ behavior: 'smooth' });
+  const parallaxElements = document.querySelectorAll('.parallax-background');
+
+  // Efeito Parallax em tempo real
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    
+    parallaxElements.forEach((el) => {
+      const speed = el.getAttribute('data-speed');
+      el.style.transform = `translateY(${scrollY * speed / 100}px)`;
+    });
   });
 
-  // Efeito de parallax
-  window.addEventListener('scroll', () => {
-    let scrolled = window.scrollY;
-    document.querySelector('.layer1
+  // Navegação suave
+  const ctaButton = document

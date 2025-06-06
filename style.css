@@ -4,55 +4,60 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
 }
 
 /* --- Hero Section --- */
 .hero {
   height: 100vh;
-  background: linear-gradient(45deg, #1a1a1a, #ff416c);
+  background: url('https://source.unsplash.com/1600x900/?space,stars') center center/cover no-repeat;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
-  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
-  padding: 0 20px;
-  animation: zoomIn 2s ease-out;
 }
 
 .hero-content {
-  max-width: 900px;
+  z-index: 2;
 }
 
-.title {
-  font-size: 7rem;
+.hero-title {
+  font-size: 6rem;  /* Diminuído */
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 5px;
-  animation: slideUp 2s ease-out;
+  letter-spacing: 10px;
+  animation: fadeInTitle 3s ease-out;
 }
 
-.subtitle {
-  font-size: 2.5rem;
-  margin-top: 20px;
+.hero-subtitle {
+  font-size: 2rem;  /* Diminuído */
   font-style: italic;
-  opacity: 0.9;
-  animation: fadeIn 3s ease-out;
+  margin-top: 20px;
+  animation: fadeInSubtitle 4s ease-out;
 }
 
 .cta-button {
   background-color: #ff416c;
-  padding: 15px 30px;
-  font-size: 1.5rem;
   color: white;
-  border: none;
+  padding: 20px 40px;
+  font-size: 1.5rem;  /* Diminuído */
+  text-decoration: none;
+  border-radius: 50px;
   margin-top: 30px;
   text-transform: uppercase;
-  border-radius: 50px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   transition: transform 0.3s ease;
 }
 
@@ -60,82 +65,87 @@
   transform: scale(1.1);
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(50px);
+@keyframes fadeInTitle {
+  0% {
+    transform: translateY(-100px);
     opacity: 0;
   }
-  to {
+  100% {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-@keyframes fadeIn {
-  from {
+@keyframes fadeInSubtitle {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
 
-@keyframes zoomIn {
-  from {
-    transform: scale(1.2);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* --- Parallax Section --- */
+.parallax-background {
+  height: 100vh;
+  background: url('https://source.unsplash.com/1600x900/?nature') center center/cover fixed;
+  will-change: transform;
+  position: relative;
+  z-index: -1;
 }
 
-/* --- Sections --- */
+/* --- Content Sections --- */
 .section {
-  padding: 100px 20px;
-  color: white;
+  padding: 120px 20px; /* Mais espaçamento */
   text-align: center;
 }
 
 .section1 {
-  background: #111;
-  position: relative;
+  background-color: #111;
+  color: white;
 }
 
 .section2 {
-  background: #222;
+  background-color: #222;
+}
+
+.section3 {
+  background-color: #333;
 }
 
 h2 {
-  font-size: 3.5rem;
-  margin-bottom: 30px;
+  font-size: 3rem;  /* Diminuído */
   text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #ff416c;
+  animation: slideUp 2s ease-out;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.25rem; /* Diminuído */
   margin-bottom: 50px;
+  color: #ccc;
 }
 
 /* --- Cards --- */
-.cards-container {
+.content-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 60px;  /* Aumentado o espaço */
+  margin-top: 40px;
 }
 
 .card {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;  /* Aumentado */
   background-color: #ff416c;
   color: white;
-  font-size: 2rem;
+  font-size: 2rem;  /* Diminuído */
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease;
 }
 
@@ -143,75 +153,25 @@ p {
   transform: scale(1.1);
 }
 
-/* --- Parallax --- */
-.parallax-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  overflow: hidden;
-  height: 100vh;
-}
-
-.parallax-layer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.layer1 {
-  background-image: url('https://source.unsplash.com/1920x1080/?space');
-  animation: parallax1 30s infinite linear;
-}
-
-.layer2 {
-  background-image: url('https://source.unsplash.com/1920x1080/?city');
-  animation: parallax2 40s infinite linear;
-}
-
-.layer3 {
-  background-image: url('https://source.unsplash.com/1920x1080/?tech');
-  animation: parallax3 50s infinite linear;
-}
-
-@keyframes parallax1 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes parallax2 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-60%); }
-}
-
-@keyframes parallax3 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-70%); }
-}
-
 /* --- Mega Gallery --- */
 .mega-gallery {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .mega-card {
-  width: 300px;
-  height: 300px;
+  width: 350px;  /* Aumentado */
+  height: 350px; /* Aumentado */
   background-color: #ff416c;
   color: white;
-  font-size: 2rem;
+  font-size: 2rem;  /* Diminuído */
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  transform: scale(1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease;
 }
 
@@ -222,9 +182,8 @@ p {
 /* --- Footer --- */
 .mega-footer {
   background: #111;
-  color: #ccc;
-  padding: 50px 20px;
+  padding: 50px 20px;  /* Aumentado o padding */
   text-align: center;
-  font-size: 1.5rem;
-  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.5);
-}
+  color: #ccc;
+  font-size: 1.5rem;  /* Diminuído */
+  box-shadow:
