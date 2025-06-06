@@ -1,19 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const parallaxElements = document.querySelectorAll('.parallax');
+  const scrollButton = document.querySelector('.cta-button');
   
-  // Animando o Parallax ao rolar
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    
-    parallaxElements.forEach((el) => {
-      const speed = el.getAttribute('data-speed');
-      el.style.transform = `translateY(${scrollY * speed / 100}px)`;
-    });
+  // Adicionando interatividade no botão de call-to-action
+  scrollButton.addEventListener('click', () => {
+    document.getElementById("section1").scrollIntoView({ behavior: 'smooth' });
   });
 
-  // Navegação suave ao clicar no CTA
-  const ctaButton = document.querySelector('.cta-button');
-  ctaButton.addEventListener('click', () => {
-    document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
-  });
-});
+  // Efeito de parallax
+  window.addEventListener('scroll', () => {
+    let scrolled = window.scrollY;
+    document.querySelector('.layer1

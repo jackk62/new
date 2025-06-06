@@ -1,49 +1,230 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="O maior site da história. Navegue pela grandiosidade digital!">
-  <title>O Império Digital - O Maior Site da História</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">O Império Digital</h1>
-      <p class="hero-subtitle">Onde a magnificência e a inovação se encontram</p>
-      <a href="#section1" class="cta-button">Explore Agora</a>
-    </div>
-    <div class="hero-background"></div>
-  </header>
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
 
-  <!-- Parallax Sections -->
-  <section id="section1" class="section section1">
-    <h2>Bem-vindo ao Futuro</h2>
-    <p>O digital nunca foi tão grandioso. Venha ver o que criamos para você.</p>
-    <div class="content-container">
-      <div class="card">Inovação</div>
-      <div class="card">Tecnologia</div>
-      <div class="card">Poder</div>
-    </div>
-  </section>
+/* --- Hero Section --- */
+.hero {
+  height: 100vh;
+  background: linear-gradient(45deg, #1a1a1a, #ff416c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+  animation: zoomIn 2s ease-out;
+}
 
-  <section class="parallax" data-speed="4"></section>
+.hero-content {
+  max-width: 900px;
+}
 
-  <section id="section2" class="section section2">
-    <h2>Transformando a Web</h2>
-    <p>Explorando novas formas de interagir com o digital, um pixel por vez.</p>
-    <div class="mega-gallery">
-      <div class="mega-card">Imagem 1</div>
-      <div class="mega-card">Imagem 2</div>
-      <div class="mega-card">Imagem 3</div>
-    </div>
-  </section>
+.title {
+  font-size: 7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  animation: slideUp 2s ease-out;
+}
 
-  <footer class="mega-footer">
-    <p>© 2025 Império Digital | Todos os direitos reservados</p>
-  </footer>
-</body>
-</html>
+.subtitle {
+  font-size: 2.5rem;
+  margin-top: 20px;
+  font-style: italic;
+  opacity: 0.9;
+  animation: fadeIn 3s ease-out;
+}
+
+.cta-button {
+  background-color: #ff416c;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  color: white;
+  border: none;
+  margin-top: 30px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --- Sections --- */
+.section {
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+.section1 {
+  background: #111;
+  position: relative;
+}
+
+.section2 {
+  background: #222;
+}
+
+h2 {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
+/* --- Cards --- */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  background-color: #ff416c;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+/* --- Parallax --- */
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url('https://source.unsplash.com/1920x1080/?space');
+  animation: parallax1 30s infinite linear;
+}
+
+.layer2 {
+  background-image: url('https://source.unsplash.com/1920x1080/?city');
+  animation: parallax2 40s infinite linear;
+}
+
+.layer3 {
+  background-image: url('https://source.unsplash.com/1920x1080/?tech');
+  animation: parallax3 50s infinite linear;
+}
+
+@keyframes parallax1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes parallax2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-60%); }
+}
+
+@keyframes parallax3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-70%); }
+}
+
+/* --- Mega Gallery --- */
+.mega-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.mega-card {
+  width: 300px;
+  height: 300px;
+  background-color: #ff416c;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.mega-card:hover {
+  transform: scale(1.1);
+}
+
+/* --- Footer --- */
+.mega-footer {
+  background: #111;
+  color: #ccc;
+  padding: 50px 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.5);
+}
