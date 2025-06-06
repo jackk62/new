@@ -10,7 +10,7 @@
 /* --- Hero Section --- */
 .hero {
   height: 100vh;
-  background: url('https://source.unsplash.com/1600x900/?space,stars') center center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(255, 72, 104, 0.9), rgba(38, 198, 218, 0.9));
   position: relative;
   display: flex;
   justify-content: center;
@@ -34,31 +34,31 @@
 }
 
 .hero-title {
-  font-size: 5rem; /* Diminuído para dar mais espaço e grandiosidade */
+  font-size: 6rem; /* Grande e Impactante */
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 8px;
-  animation: fadeInTitle 3s ease-out;
+  letter-spacing: 15px;
+  animation: fadeInTitle 2s ease-out;
 }
 
 .hero-subtitle {
-  font-size: 1.8rem; /* Diminuído */
+  font-size: 2.5rem; /* Mais Ajustado */
   font-style: italic;
   margin-top: 20px;
-  animation: fadeInSubtitle 4s ease-out;
+  animation: fadeInSubtitle 3s ease-out;
 }
 
 .cta-button {
-  background-color: #ff416c;
+  background-color: #28c6da;
   color: white;
-  padding: 18px 40px;
-  font-size: 1.4rem; /* Diminuído */
+  padding: 18px 50px;
+  font-size: 1.5rem;
   text-decoration: none;
-  border-radius: 50px;
-  margin-top: 30px;
+  border-radius: 30px;
+  margin-top: 40px;
   text-transform: uppercase;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  transition: transform 0.4s ease;
 }
 
 .cta-button:hover {
@@ -88,7 +88,7 @@
 /* --- Parallax Section --- */
 .parallax-background {
   height: 100vh;
-  background: url('https://source.unsplash.com/1600x900/?nature') center center/cover fixed;
+  background: url('https://source.unsplash.com/1600x900/?technology,space') center center/cover fixed;
   will-change: transform;
   position: relative;
   z-index: -1;
@@ -96,17 +96,17 @@
 
 /* --- Content Sections --- */
 .section {
-  padding: 150px 20px; /* Aumentado o padding para dar mais espaçamento */
+  padding: 180px 30px; /* Mais espaçamento para aumentar a "imponência" */
   text-align: center;
 }
 
 .section1 {
-  background-color: #111;
+  background-color: #222;
   color: white;
 }
 
 .section2 {
-  background-color: #222;
+  background-color: #181818;
 }
 
 .section3 {
@@ -114,30 +114,84 @@
 }
 
 h2 {
-  font-size: 3.5rem; /* Diminuído, mas mantendo a grandiosidade */
+  font-size: 4rem;
   text-transform: uppercase;
   margin-bottom: 40px;
-  color: #ff416c;
+  color: #28c6da;
   animation: slideUp 2s ease-out;
 }
 
 p {
-  font-size: 1.2rem; /* Diminuído */
+  font-size: 1.5rem;
   margin-bottom: 50px;
-  color: #ccc;
+  color: #ddd;
 }
 
 /* --- Cards --- */
 .content-container {
   display: flex;
   justify-content: center;
-  gap: 80px; /* Aumentado o gap para maior espaçamento */
-  margin-top: 40px;
+  gap: 80px;
+  margin-top: 50px;
 }
 
 .card {
-  width: 350px; /* Aumentado */
-  height: 350px; /* Aumentado */
-  background-color: #ff416c;
+  width: 380px;
+  height: 380px;
+  background-color: #ff4878;
   color: white;
-  font-size: 2.2rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.8);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
+}
+
+/* --- Mega Gallery --- */
+.mega-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.mega-card {
+  width: 420px;
+  height: 420px;
+  background-color: #ff4878;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.8);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mega-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
+}
+
+/* --- Footer --- */
+.mega-footer {
+  background: #222;
+  padding: 80px 30px;
+  text-align: center;
+  color: #ddd;
+  font-size: 1.8rem;
+  box-shadow: 0 -6px 40px rgba(0, 0, 0, 0.8);
+}
+
+.mega-footer p {
+  font-size: 1.3rem;
+  color: #bbb;
+}
