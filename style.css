@@ -1,197 +1,68 @@
-/* RESET GLOBAL */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  transition: all 0.3s ease;
+// Dados para o gráfico 1 (Crescimento de vendas)
+const dadosGrafico1 = [
+  { data: '2023-01-01', vendas: 100 },
+  { data: '2023-02-01', vendas: 120 },
+  { data: '2023-03-01', vendas: 150 },
+  { data: '2023-04-01', vendas: 130 },
+  { data: '2023-05-01', vendas: 170 },
+  { data: '2023-06-01', vendas: 160 },
+];
+
+// Dados para o gráfico 2 (Desempenho por regiões)
+const dadosGrafico2 = [
+  { regiao: 'Norte', vendas: 120 },
+  { regiao: 'Sul', vendas: 150 },
+  { regiao: 'Leste', vendas: 180 },
+  { regiao: 'Oeste', vendas: 130 },
+];
+
+// Função para criar o gráfico
+function criarGrafico(idCanvas, data, labels, tipo) {
+  const ctx = document.getElementById(idCanvas).getContext('2d');
+  const config = {
+    type: tipo, // 'line', 'bar', etc.
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Vendas',
+        data: data,
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        fill: true,
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        x: {
+          beginAtZero: true,
+        },
+        y: {
+          beginAtZero: true,
+        }
+      },
+    }
+  };
+  return new Chart(ctx, config);
 }
 
-/* --- Hero Section --- */
-.hero {
-  height: 100vh;
-  background: linear-gradient(135deg, rgba(255, 72, 104, 0.9), rgba(38, 198, 218, 0.9));
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
+// Criando os gráficos iniciais
+const grafico1 = criarGrafico('grafico1Canvas', dadosGrafico1.map(item => item.vendas), dadosGrafico1.map(item => item.data), 'line');
+const grafico2 = criarGrafico('grafico2Canvas', dadosGrafico2.map(item => item.vendas), dadosGrafico2.map(item => item.regiao), 'bar');
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
+// Aplicar filtro
+const aplicarFiltroBtn = document.getElementById('aplicarFiltro');
+aplicarFiltroBtn.addEventListener('click', () => {
+  const dataFiltro = document.getElementById('filtroData').value;
 
-.hero-content {
-  z-index: 2;
-}
+  // Filtrar dados com base na data (exemplo simples de filtro)
+  const dadosFiltrados1 = dadosGrafico1.filter(item => item.data === dataFiltro);
+  const dadosFiltrados2 = dadosGrafico2.filter(item => item.regiao === dataFiltro);
 
-.hero-title {
-  font-size: 6rem; /* Grande e Impactante */
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 15px;
-  animation: fadeInTitle 2s ease-out;
-}
+  // Atualizar os gráficos com os dados filtrados
+  grafico1.data.labels = dadosFiltrados1.map(item => item.data);
+  grafico1.data.datasets[0].data = dadosFiltrados1.map(item => item.vendas);
+  grafico1.update();
 
-.hero-subtitle {
-  font-size: 2.5rem; /* Mais Ajustado */
-  font-style: italic;
-  margin-top: 20px;
-  animation: fadeInSubtitle 3s ease-out;
-}
-
-.cta-button {
-  background-color: #28c6da;
-  color: white;
-  padding: 18px 50px;
-  font-size: 1.5rem;
-  text-decoration: none;
-  border-radius: 30px;
-  margin-top: 40px;
-  text-transform: uppercase;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-  transition: transform 0.4s ease;
-}
-
-.cta-button:hover {
-  transform: scale(1.1);
-}
-
-@keyframes fadeInTitle {
-  0% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInSubtitle {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* --- Parallax Section --- */
-.parallax-background {
-  height: 100vh;
-  background: url('https://source.unsplash.com/1600x900/?technology,space') center center/cover fixed;
-  will-change: transform;
-  position: relative;
-  z-index: -1;
-}
-
-/* --- Content Sections --- */
-.section {
-  padding: 180px 30px; /* Mais espaçamento para aumentar a "imponência" */
-  text-align: center;
-}
-
-.section1 {
-  background-color: #222;
-  color: white;
-}
-
-.section2 {
-  background-color: #181818;
-}
-
-.section3 {
-  background-color: #333;
-}
-
-h2 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-  color: #28c6da;
-  animation: slideUp 2s ease-out;
-}
-
-p {
-  font-size: 1.5rem;
-  margin-bottom: 50px;
-  color: #ddd;
-}
-
-/* --- Cards --- */
-.content-container {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  margin-top: 50px;
-}
-
-.card {
-  width: 380px;
-  height: 380px;
-  background-color: #ff4878;
-  color: white;
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 25px;
-  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.8);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
-}
-
-/* --- Mega Gallery --- */
-.mega-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 60px;
-}
-
-.mega-card {
-  width: 420px;
-  height: 420px;
-  background-color: #ff4878;
-  color: white;
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 25px;
-  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.8);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.mega-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9);
-}
-
-/* --- Footer --- */
-.mega-footer {
-  background: #222;
-  padding: 80px 30px;
-  text-align: center;
-  color: #ddd;
-  font-size: 1.8rem;
-  box-shadow: 0 -6px 40px rgba(0, 0, 0, 0.8);
-}
-
-.mega-footer p {
-  font-size: 1.3rem;
-  color: #bbb;
-}
+  grafico2.data.labels = dadosFiltrados2.map(item => item.regiao);
+  grafico2.data.datasets[0].data = dadosFiltrados2.map(item =>

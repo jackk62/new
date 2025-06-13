@@ -1,64 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="O Império Digital - O maior site de todos os tempos. Uma experiência única e grandiosa.">
-  <title>O Império Digital</title>
+  <title>Estatísticas Interativas</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">O Império Digital</h1>
-      <p class="hero-subtitle">Transformando o futuro digital em realidade.</p>
-      <a href="#section1" class="cta-button">Comece a Jornada</a>
-    </div>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Estatísticas Interativas</h1>
+      <p>Visualize dados dinâmicos de maneira interativa e moderna.</p>
+    </header>
 
-  <!-- Parallax Section -->
-  <section id="section1" class="section section1">
-    <h2>A Revolução Digital</h2>
-    <p>O poder da inovação nas suas mãos.</p>
-    <div class="content-container">
-      <div class="card">Inovação</div>
-      <div class="card">Tecnologia</div>
-      <div class="card">Conectividade</div>
-    </div>
-  </section>
+    <nav>
+      <ul>
+        <li><a href="#grafico1">Gráfico 1</a></li>
+        <li><a href="#grafico2">Gráfico 2</a></li>
+        <li><a href="#filtros">Filtros</a></li>
+      </ul>
+    </nav>
 
-  <div class="parallax-background" data-speed="5"></div>
+    <main>
+      <section class="grafico" id="grafico1">
+        <h2>Gráfico 1: Crescimento de Vendas</h2>
+        <div class="chart-container">
+          <canvas id="grafico1Canvas"></canvas>
+        </div>
+      </section>
 
-  <!-- Galeria Mega -->
-  <section id="section2" class="section section2">
-    <h2>O Mundo em 360º</h2>
-    <p>Explore e interaja com o futuro.</p>
-    <div class="mega-gallery">
-      <div class="mega-card">Imagem 1</div>
-      <div class="mega-card">Imagem 2</div>
-      <div class="mega-card">Imagem 3</div>
-    </div>
-  </section>
+      <section class="grafico" id="grafico2">
+        <h2>Gráfico 2: Desempenho por Regiões</h2>
+        <div class="chart-container">
+          <canvas id="grafico2Canvas"></canvas>
+        </div>
+      </section>
 
-  <div class="parallax-background" data-speed="7"></div>
+      <section class="filtros" id="filtros">
+        <h2>Filtros de Dados</h2>
+        <div class="filter-container">
+          <label for="filtroData">Data:</label>
+          <input type="date" id="filtroData" />
+          <button id="aplicarFiltro">Aplicar Filtro</button>
+        </div>
+      </section>
+    </main>
 
-  <!-- Seção Extra -->
-  <section id="section3" class="section section3">
-    <h2>Interatividade Avançada</h2>
-    <p>Redefinindo a experiência digital com tecnologias inovadoras.</p>
-    <div class="content-container">
-      <div class="card">Realidade Aumentada</div>
-      <div class="card">Inteligência Artificial</div>
-      <div class="card">Design Futurista</div>
-    </div>
-  </section>
+    <footer>
+      <p>© 2025 Estatísticas Interativas. Todos os direitos reservados.</p>
+    </footer>
+  </div>
 
-  <!-- Footer -->
-  <footer class="mega-footer">
-    <p>© 2025 O Império Digital | Todos os direitos reservados</p>
-  </footer>
+  <script src="script.js"></script>
 </body>
+
 </html>
