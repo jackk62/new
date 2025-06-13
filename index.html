@@ -1,60 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estatísticas Interativas</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhorias do Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
-  <div class="container">
     <header>
-      <h1>Estatísticas Interativas</h1>
-      <p>Visualize dados dinâmicos com gráficos modernos e interativos.</p>
+        <h1>Bem-vindo ao nosso site!</h1>
     </header>
-
-    <nav>
-      <ul>
-        <li><a href="#grafico1">Vendas</a></li>
-        <li><a href="#grafico2">Regiões</a></li>
-        <li><a href="#filtros">Filtros</a></li>
-      </ul>
-    </nav>
-
     <main>
-      <section id="grafico1" class="grafico">
-        <h2>Vendas ao Longo do Tempo</h2>
-        <div class="chart-container">
-          <canvas id="grafico1Canvas"></canvas>
-        </div>
-      </section>
-
-      <section id="grafico2" class="grafico">
-        <h2>Vendas por Região</h2>
-        <div class="chart-container">
-          <canvas id="grafico2Canvas"></canvas>
-        </div>
-      </section>
-
-      <section id="filtros" class="filtros">
-        <h2>Filtrar Dados</h2>
-        <div class="filter-container">
-          <label for="filtroData">Escolha uma data:</label>
-          <input type="date" id="filtroData" />
-          <button id="aplicarFiltro">Aplicar Filtro</button>
-        </div>
-      </section>
+        <form id="dataForm">
+            <label for="inputData">Insira suas informações:</label>
+            <input type="text" id="inputData" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <canvas id="myChart" width="400" height="200"></canvas>
     </main>
-
     <footer>
-      <p>&copy; 2025 Estatísticas Interativas. Todos os direitos reservados.</p>
+        <p>© 2023 Seu Site</p>
     </footer>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
