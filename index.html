@@ -13,36 +13,36 @@
   <div class="container">
     <header>
       <h1>Estatísticas Interativas</h1>
-      <p>Visualize dados dinâmicos de maneira interativa e moderna.</p>
+      <p>Visualize dados dinâmicos com gráficos modernos e interativos.</p>
     </header>
 
     <nav>
       <ul>
-        <li><a href="#grafico1">Gráfico 1</a></li>
-        <li><a href="#grafico2">Gráfico 2</a></li>
+        <li><a href="#grafico1">Vendas</a></li>
+        <li><a href="#grafico2">Regiões</a></li>
         <li><a href="#filtros">Filtros</a></li>
       </ul>
     </nav>
 
     <main>
-      <section class="grafico" id="grafico1">
-        <h2>Gráfico 1: Crescimento de Vendas</h2>
+      <section id="grafico1" class="grafico">
+        <h2>Vendas ao Longo do Tempo</h2>
         <div class="chart-container">
           <canvas id="grafico1Canvas"></canvas>
         </div>
       </section>
 
-      <section class="grafico" id="grafico2">
-        <h2>Gráfico 2: Desempenho por Regiões</h2>
+      <section id="grafico2" class="grafico">
+        <h2>Vendas por Região</h2>
         <div class="chart-container">
           <canvas id="grafico2Canvas"></canvas>
         </div>
       </section>
 
-      <section class="filtros" id="filtros">
-        <h2>Filtros de Dados</h2>
+      <section id="filtros" class="filtros">
+        <h2>Filtrar Dados</h2>
         <div class="filter-container">
-          <label for="filtroData">Data:</label>
+          <label for="filtroData">Escolha uma data:</label>
           <input type="date" id="filtroData" />
           <button id="aplicarFiltro">Aplicar Filtro</button>
         </div>
@@ -50,7 +50,7 @@
     </main>
 
     <footer>
-      <p>© 2025 Estatísticas Interativas. Todos os direitos reservados.</p>
+      <p>&copy; 2025 Estatísticas Interativas. Todos os direitos reservados.</p>
     </footer>
   </div>
 

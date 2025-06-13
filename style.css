@@ -1,68 +1,129 @@
-// Dados para o gráfico 1 (Crescimento de vendas)
-const dadosGrafico1 = [
-  { data: '2023-01-01', vendas: 100 },
-  { data: '2023-02-01', vendas: 120 },
-  { data: '2023-03-01', vendas: 150 },
-  { data: '2023-04-01', vendas: 130 },
-  { data: '2023-05-01', vendas: 170 },
-  { data: '2023-06-01', vendas: 160 },
-];
-
-// Dados para o gráfico 2 (Desempenho por regiões)
-const dadosGrafico2 = [
-  { regiao: 'Norte', vendas: 120 },
-  { regiao: 'Sul', vendas: 150 },
-  { regiao: 'Leste', vendas: 180 },
-  { regiao: 'Oeste', vendas: 130 },
-];
-
-// Função para criar o gráfico
-function criarGrafico(idCanvas, data, labels, tipo) {
-  const ctx = document.getElementById(idCanvas).getContext('2d');
-  const config = {
-    type: tipo, // 'line', 'bar', etc.
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'Vendas',
-        data: data,
-        borderColor: 'rgba(75, 192, 192, 1)',
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        fill: true,
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        x: {
-          beginAtZero: true,
-        },
-        y: {
-          beginAtZero: true,
-        }
-      },
-    }
-  };
-  return new Chart(ctx, config);
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-// Criando os gráficos iniciais
-const grafico1 = criarGrafico('grafico1Canvas', dadosGrafico1.map(item => item.vendas), dadosGrafico1.map(item => item.data), 'line');
-const grafico2 = criarGrafico('grafico2Canvas', dadosGrafico2.map(item => item.vendas), dadosGrafico2.map(item => item.regiao), 'bar');
+/* Corpo da página */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-// Aplicar filtro
-const aplicarFiltroBtn = document.getElementById('aplicarFiltro');
-aplicarFiltroBtn.addEventListener('click', () => {
-  const dataFiltro = document.getElementById('filtroData').value;
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  // Filtrar dados com base na data (exemplo simples de filtro)
-  const dadosFiltrados1 = dadosGrafico1.filter(item => item.data === dataFiltro);
-  const dadosFiltrados2 = dadosGrafico2.filter(item => item.regiao === dataFiltro);
+/* Cabeçalho */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 40px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
 
-  // Atualizar os gráficos com os dados filtrados
-  grafico1.data.labels = dadosFiltrados1.map(item => item.data);
-  grafico1.data.datasets[0].data = dadosFiltrados1.map(item => item.vendas);
-  grafico1.update();
+header h1 {
+  font-size: 3rem;
+}
 
-  grafico2.data.labels = dadosFiltrados2.map(item => item.regiao);
-  grafico2.data.datasets[0].data = dadosFiltrados2.map(item =>
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Navegação */
+nav {
+  margin-bottom: 30px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #3498db;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #2980b9;
+}
+
+/* Seções */
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Gráficos */
+.chart-container {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Filtros */
+.filtros {
+  background-color: #ecf0f1;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+input[type="date"] {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-radius: 10px;
+}
