@@ -1,59 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notícias - Seu Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Melhorando o Site</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Notícias do Dia</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Mundo</a></li>
-                    <li><a href="#">Brasil</a></li>
-                    <li><a href="#">Esportes</a></li>
-                    <li><a href="#">Entretenimento</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main class="container">
-        <section class="news">
-            <article>
-                <h2>Título da Notícia 1</h2>
-                <p>Resumo da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#">Leia mais</a>
-            </article>
-            <article>
-                <h2>Título da Notícia 2</h2>
-                <p>Resumo da notícia 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#">Leia mais</a>
-            </article>
-            <article>
-                <h2>Título da Notícia 3</h2>
-                <p>Resumo da notícia 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#">Leia mais</a>
-            </article>
-        </section>
-        <aside class="sidebar">
-            <h3>Últimas Notícias</h3>
+        <nav>
             <ul>
-                <li><a href="#">Notícia 1</a></li>
-                <li><a href="#">Notícia 2</a></li>
-                <li><a href="#">Notícia 3</a></li>
-                <li><a href="#">Notícia 4</a></li>
-                <li><a href="#">Notícia 5</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact">Contato</a></li>
             </ul>
-        </aside>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="hero">
+            <h1>Bem-vindo ao nosso site!</h1>
+            <p>Explore nossos serviços e descubra o que podemos fazer por você.</p>
+            <button onclick="scrollToSection('#services')">Saiba Mais</button>
+        </section>
+
+        <section id="about">
+            <h2>Sobre nós</h2>
+            <p>Temos uma missão de fornecer as melhores soluções tecnológicas.</p>
+        </section>
+
+        <section id="services">
+            <h2>Serviços</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criação de websites modernos e responsivos.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Consultoria</h3>
+                    <p>Ajudamos a melhorar a performance da sua empresa.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Suporte</h3>
+                    <p>Suporte técnico para empresas e usuários.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contato</h2>
+            <form action="#">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     </main>
+
     <footer>
-        <div class="container">
-            <p>© 2023 Seu Site. Todos os direitos reservados.</p>
-        </div>
+        <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
