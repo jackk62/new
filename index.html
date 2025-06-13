@@ -1,20 +1,59 @@
-// Exemplo de script para carregar dados dinamicamente
-document.addEventListener('DOMContentLoaded', function() {
-    const latestNewsList = document.getElementById('latestNewsList');
-
-    // Simulação de dados que poderiam ser carregados de uma API
-    const latestNews = [
-        'Notícia 1: Detalhes importantes',
-        'Notícia 2: Novidades do dia',
-        'Notícia 3: Atualizações relevantes',
-        'Notícia 4: Informações úteis',
-        'Notícia 5: Últimas notícias'
-    ];
-
-    // Adicionar as últimas notícias à lista
-    latestNews.forEach(news => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="#">${news}</a>`;
-        latestNewsList.appendChild(li);
-    });
-});
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - Seu Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Notícias do Dia</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Mundo</a></li>
+                    <li><a href="#">Brasil</a></li>
+                    <li><a href="#">Esportes</a></li>
+                    <li><a href="#">Entretenimento</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="news">
+            <article>
+                <h2>Título da Notícia 1</h2>
+                <p>Resumo da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#">Leia mais</a>
+            </article>
+            <article>
+                <h2>Título da Notícia 2</h2>
+                <p>Resumo da notícia 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#">Leia mais</a>
+            </article>
+            <article>
+                <h2>Título da Notícia 3</h2>
+                <p>Resumo da notícia 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#">Leia mais</a>
+            </article>
+        </section>
+        <aside class="sidebar">
+            <h3>Últimas Notícias</h3>
+            <ul>
+                <li><a href="#">Notícia 1</a></li>
+                <li><a href="#">Notícia 2</a></li>
+                <li><a href="#">Notícia 3</a></li>
+                <li><a href="#">Notícia 4</a></li>
+                <li><a href="#">Notícia 5</a></li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2023 Seu Site. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
