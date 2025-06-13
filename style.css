@@ -16,15 +16,21 @@ main {
     padding: 20px;
 }
 
-form {
-    margin-bottom: 20px;
+#dataContainer {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"] {
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
     padding: 10px;
-    width: 100%;
-    max-width: 400px;
-    margin-right: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 button {
@@ -33,6 +39,7 @@ button {
     color: #ffffff;
     border: none;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 button:hover {

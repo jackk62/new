@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melhorias do Site</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Bem-vindo ao nosso site!</h1>
-    </header>
-    <main>
-        <form id="dataForm">
-            <label for="inputData">Insira suas informações:</label>
-            <input type="text" id="inputData" required>
-            <button type="submit">Enviar</button>
-        </form>
-        <canvas id="myChart" width="400" height="200"></canvas>
-    </main>
-    <footer>
-        <p>© 2023 Seu Site</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+document.getElementById('loadDataButton').addEventListener('click', function() {
+    const dataList = document.getElementById('dataList');
+    dataList.innerHTML = ''; // Limpar a lista antes de carregar novos dados
+
+    // Simulação de dados que poderiam ser carregados de uma API ou banco de dados
+    const data = [
+        'Dado 1: Informações importantes',
+        'Dado 2: Mais informações relevantes',
+        'Dado 3: Dados adicionais',
+        'Dado 4: Informações úteis',
+        'Dado 5: Últimos dados disponíveis'
+    ];
+
+    // Adicionar os dados à lista
+    data.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        dataList.appendChild(li);
+    });
+});
