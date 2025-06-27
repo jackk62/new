@@ -11,13 +11,9 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 /* Cabeçalho e navegação */
@@ -57,7 +53,6 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    overflow: hidden;
 }
 
 /* Hero Section */
@@ -95,49 +90,58 @@ main {
 .hero button:hover {
     background-color: #c0392b;
 }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-/* Conteúdo Centralizado */
-.container {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    width: 100%;
-    text-align: justify;
-    overflow-y: auto;
-}
+        .container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            text-align: justify;
+            overflow-y: auto;
+        }
 
-h1 {
-    text-align: center;
-    color: #2c3e50;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
 
-p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
 
-.highlight {
-    font-weight: bold;
-    color: #e74c3c;
-}
+        .highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
 
-.section-title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-top: 1.5rem;
-}
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-top: 1.5rem;
+        }
 
-.quote {
-    font-style: italic;
-    color: #7f8c8d;
-    margin: 1.5rem 0;
-}
-
+        .quote {
+            font-style: italic;
+            color: #7f8c8d;
+            margin: 1.5rem 0;
+        }
 /* Seções Sobre, Serviços e Contato */
 section {
     margin: 3rem 0;
@@ -228,5 +232,4 @@ footer {
     padding: 1rem;
     position: relative;
     width: 100%;
-    bottom: 0;
-}
+} 
